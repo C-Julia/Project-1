@@ -16,7 +16,8 @@ using namespace std;
 // Function menu presents menu to user and collects a selection
 int menu();
 
-int main( ){
+int main( )
+{
      Runtime tmp;
 // Test your input and output operators with this:
 /*     cout<<"Enter a run: ";
@@ -25,6 +26,10 @@ int main( ){
      cout<<tmp<<endl;
      cout<<"Good-bye.\n";
 */
+	cout << "Enter a run: ";
+	cin >> tmp;
+	cout << endl << "Here it is: " << tmp << endl;
+	cout << "Good-bye." << endl;
 //     Runjournal myruns;  //Default constructor 1st
      ifstream ifs;
      ofstream ofs;

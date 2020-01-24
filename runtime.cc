@@ -1,5 +1,6 @@
 //
 // Julia Cygan
+// jc362818@ohio.edu
 // February 1st, 2020
 // CS 2401
 // John Dolan
@@ -13,67 +14,33 @@
 using namespace std;
 
 //CONSTRUCTORS
-Runtime::Runtime()
+Runtime::Runtime(MyTime rt=0, double d=0)
 {
-
-}
-
-//ACCESSORS 
-double Runtime::get_distance()const
-{
-    return distance;
-}
-MyTime get_time()const
-{
-    return rtime;
-}
-
-//MUTATORS 
-void set_time(const MyTime& myt)
-{
-    rtime = myt;
-}
-void set_distance(const double& d)
-{
-    distance = d;
-}
-
-//HELPER FUNCTIONS
-MyTime pace()
-{
-    return rtime/distance;
-}
-bool distance_equal(double d) const
-{
-
+    rtime = rt;
+    if(d <= 0)
+    {
+        distance = 0;
+    }
+    else
+    {
+        distance = d;
+    }
 }
 
 //OVERLOADING OPERATORS
-Runtime operator +(const Runtime& rhs)const
+Runtime Runtime::operator +(const Runtime& rhs)const
 {
-
+    Runtime temp;
+    temp.rtime = rhs.rtime + rtime;
+    temp.distance = rhs.distance + distance;
+    return temp;
 }
-Runtime operator -(const Runtime& rhs)const
-{
 
-}
-Runtime operator *(const double& rhs) const
-{
-
-}
-Runtime operator /(const double& rhs) const
-{
-
-}
-bool operator == (const Runtime& rhs)const
-{
-
-}
-bool operator != (const Runtime& rhs)const
+Runtime Runtime::operator -(const Runtime& rhs)const
 {
 
 }
 
 //INPUTS OUTPUTS
 void input(std::istream& ins);
-void output(std::ostream& outs)const;
+void output(std::ostream& outs);

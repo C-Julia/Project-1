@@ -14,7 +14,7 @@
 
 class Runtime{
     public:
-	Runtime();
+	Runtime(MyTime rt=0, double d=0);
 	// accessors
 	double get_distance()const{return distance;}
 	MyTime get_time()const{return rtime;}
@@ -39,6 +39,7 @@ class Runtime{
  	// Input - Output
 	void input(std::istream& ins);
 	void output(std::ostream& outs)const;
+
     private:
 	MyTime rtime;
 	double distance;
