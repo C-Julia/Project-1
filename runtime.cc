@@ -43,7 +43,7 @@ Runtime Runtime::operator /(const double& rhs)const
 
 bool Runtime::operator == (const Runtime& rhs)const
 {
-    if(rhs.distance_equal(distance));
+    if(rhs.distance_equal(distance))
     {
         if(rtime == rhs.get_time())
         {
@@ -77,4 +77,27 @@ bool Runtime::operator != (const Runtime& rhs)const
         }
     }
     return true;
+}
+
+void Runtime::input(std::istream& ins)
+{
+    int temphours;
+    int tempminutes;
+    int tempseconds;
+    char junk;
+    ins>>temphours;
+    ins.get(junk);
+    ins>>tempminutes;
+    ins.get(junk);
+    ins>>tempseconds;
+    MyTime temp(temphours, tempminutes, tempseconds);
+    ins >> distance;
+    rtime = temp;
+}
+
+void Runtime::output(std::ostream& outs)const
+{
+    outs<<rtime.get_hours()<<':'<<setw(2)<<setfill('0')<<rtime.get_minutes();
+    outs<<':'<<setw(2)<<setfill('0')<<rtime.get_seconds();
+    outs << setprecision(1) << setfill(' ') << distance << endl;
 }
