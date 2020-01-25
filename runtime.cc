@@ -101,3 +101,14 @@ void Runtime::output(std::ostream& outs)const
     outs<<':'<<setw(2)<<setfill('0')<<rtime.get_seconds();
     outs << setprecision(1) << setfill(' ') << distance << endl;
 }
+
+std::ostream& operator <<(std::ostream& outs, const Runtime& rhs)
+{
+    rhs.output(outs);
+    return outs;
+}
+std::istream& operator >>(std::istream& ins, Runtime& rhs)
+{
+    rhs.input(ins);
+    return ins;
+}
