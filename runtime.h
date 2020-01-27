@@ -12,7 +12,8 @@
 #ifndef RUNTIME_H
 #define RUNTIME_H
 
-class Runtime{
+class Runtime
+{
     public:
 	Runtime();
 	// accessors
