@@ -20,8 +20,6 @@ int menu();
 int main()
 {
     Runtime tmp;
-    Runtime temp;
-    double testing;
 // Test your input and output operators with this
     cout<<"Enter a run: ";
     cin>>tmp;
@@ -37,7 +35,7 @@ int main()
      int choice;
     //  double dist;
 //file loading - do last 12th
-/*     ifs.open("runlog.txt");
+     ifs.open("runlog.txt");
      if(!ifs.fail()){
 	ifs>>tmp;
 	while(!ifs.eof()){
@@ -46,45 +44,45 @@ int main()
 	}
 	ifs.close();
      } // if the file is not there we assume this is the first running
-*/
      do
      {
 	choice = menu();
 	switch(choice)
     {
-/*	case 1: cin>>tmp;
+	case 1: cin>>tmp;
 	       	myruns.record(tmp);  //2nd
 		break;
-*/
-/*	case 2:  cin>>tmp;
+
+	case 2:  cin>>tmp;
 		myruns.find_remove(tmp);  //4th
 		break;
-*/
-/*	case 3:	myruns.display(); //3rd
+
+	case 3:	myruns.display(); //3rd
 		break;
-*/
-/*	case 4:	cout<<"Enter a distance to view.\n";
+
+	case 4:	cout<<"Enter a distance to view.\n";
+        double dist;
 		cin>>dist;
 		myruns.distance_view(dist); //5th
 		break;
-*/
-/*	case 5:	myruns.time_sort(); //6th
+
+	case 5:	myruns.time_sort(); //6th
 		myruns.display();
 		break;
-*/
-/*	case 6:	myruns.distance_sort(); //7th
+
+	case 6:	myruns.distance_sort(); //7th
 		myruns.display();
 		break;
-*/
-/*	case 7:  cout<<myruns.total_time()<<endl; //8th
+
+	case 7:  cout<< myruns.total_time()<<endl; //8th
 		break;
-*/
-/*	case 8: cout<<myruns.total_distance()<<endl; // 9th
+
+	case 8: cout<<myruns.total_distance()<<endl; // 9th
 		break;
-*/
-/*	case 9: cout<<myruns.average_pace()<<endl; //10th
+
+	case 9: cout<<myruns.average_pace()<<endl; //10th
 	    	break;
-*/
+
 	case 0: cout<<"Thank you for using our software.\n";
 		break;
 	    default: cout<<"Not a valid selection.\n";
@@ -92,12 +90,12 @@ int main()
 	} // bottom of the switch
     	}while(choice != 0);
 //file saving
-/*	ofs.open("runlog.txt");
+	ofs.open("runlog.txt");
 	if(!ofs.fail()){
 	    myruns.save(ofs); //11th
 	    ofs.close();
  	}
-*/
+
 
 return 0;
 }

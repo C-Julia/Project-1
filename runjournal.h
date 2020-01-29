@@ -20,11 +20,11 @@ class Runjournal
     void display()const;//displays ALL Runtimes in the container
     void save(std::ostream& ofs);
 
-    void find_remove(const Runtime& stime, const double& sdist);//should display first matche and the time AND distance and give an option to remove it
+    void find_remove(const Runtime& sruntime);//should display first matche and the time AND distance and give an option to remove it
     void distance_view(const double& sdist)const;//view ALL Runtimes of a certain distance
 
-    void sort_by_time();//Highest to lowest or lowest to highest?
-    void sort_by_distance();//do lowest to highest for now
+    void time_sort();//Highest to lowest or lowest to highest?
+    void distance_sort();//do lowest to highest for now
 
     MyTime total_time();
     double total_distance();

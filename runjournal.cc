@@ -28,17 +28,15 @@ void Runjournal::record(const Runtime& newRun)
     num++;
 }
 
-void Runjournal::find_remove(const Runtime& stime, const double& sdist)
+void Runjournal::find_remove(const Runtime& sruntime)
 {
     bool found = false;
     for(int i = 0; i < num; i++)
     {
-        if(list[i].get_time() == stime.get_time())
+        if(list[i].distance_equal(sruntime.get_distance()) && list[i].get_time() == sruntime.get_time())
         {
-            if(list[i].distance_equal(sdist))
-            {
                 found = true;
-                cout << list[i].get_time() << list[i].get_distance() << endl;// ADD PACE variable
+                cout << "Time: " << list[i].get_time() << " Distance: " << list[i].get_distance() << " Pace: " << list[i].pace() << endl;// ADD PACE variable
                 cout << "Would you like to remove this entry? Y/N " << endl;
                 char answer;
                 cin >> answer;
@@ -46,9 +44,9 @@ void Runjournal::find_remove(const Runtime& stime, const double& sdist)
                 {
                     list[i] = list[num];
                     num --;
+                    cout << "Entry removed." << endl;
                 }
                 break;
-            }
         }
     }
     if(found == false)
@@ -68,7 +66,7 @@ void Runjournal::distance_view(const double& sdist)const
     }
 }
 
-void Runjournal::sort_by_time()
+void Runjournal::time_sort()
 {
     for(int i = 0; i < num-1; i++)
     {
@@ -85,7 +83,7 @@ void Runjournal::sort_by_time()
     }
 }
 
-void Runjournal::sort_by_distance()
+void Runjournal::distance_sort()
 {
     for(int i = 0; i < num-1; i++)
     {
