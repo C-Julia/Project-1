@@ -11,6 +11,7 @@
 #include<iostream>
 #include<fstream>
 #include "runtime.h"
+#include "runjournal.h"
 using namespace std;
 
 // Function menu presents menu to user and collects a selection
@@ -28,18 +29,9 @@ int main()
     cout<<tmp<<endl;
     cout<<"Good-bye.\n";
     
-    cout << "Enter another run and distance: ";
-    cin >> temp;
-    cout << endl;
-    cout << "Now enter a scalar (double): ";
-    cin >> testing;
-    cout << endl;
-    cout << "Multiplied: " << temp * testing << endl;
-    cout << "Divided: " << temp / testing << endl;
-    cout << "Added: " << temp+tmp << endl;
-    cout << "Subtracted: " << temp- tmp << endl;
 
-//     Runjournal myruns;  //Default constructor 1st
+
+    Runjournal myruns;  //Default constructor 1st
      ifstream ifs;
      ofstream ofs;
      int choice;

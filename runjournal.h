@@ -16,18 +16,19 @@ class Runjournal
     //default constructor
     Runjournal();
 
-    void record(Runtime newRun);//adds a run passed as a parameter
+    void record(const Runtime& newRun);//adds a run passed as a parameter
     void display()const;//displays ALL Runtimes in the container
+    void save(std::ostream& ofs);
 
-    void find_remove(Runtime stime);//should display first matche and the time AND distance and give an option to remove it
-    void distance_view(double& sdist);//view ALL Runtimes of a certain distance
+    void find_remove(const Runtime& stime, const double& sdist);//should display first matche and the time AND distance and give an option to remove it
+    void distance_view(const double& sdist)const;//view ALL Runtimes of a certain distance
 
-    void sort_by_time();//
-    void sort_by_distance();
+    void sort_by_time();//Highest to lowest or lowest to highest?
+    void sort_by_distance();//do lowest to highest for now
 
     MyTime total_time();
     double total_distance();
-    double average_pace();
+    MyTime average_pace();
 
     private:
     Runtime list [CAPACITY];

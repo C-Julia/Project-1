@@ -57,6 +57,8 @@ bool Runtime::operator == (const Runtime& rhs)const
     return false;
 }
 
+//END OPERATORS OVERLOADS
+
 bool Runtime::distance_equal(double d)const
 {
     double temp = distance - d;
