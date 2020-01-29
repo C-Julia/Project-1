@@ -103,7 +103,7 @@ void Runtime::output(std::ostream& outs)const
 {
     outs<<rtime.get_hours()<<':'<<setw(2)<<setfill('0')<<rtime.get_minutes();
     outs<<':'<<setw(2)<<setfill('0')<<rtime.get_seconds();
-    outs << setprecision(1) << setfill(' ') << distance << endl;
+    outs << setprecision(1) << setfill(' ') << " " << distance;
 }
 
 std::ostream& operator <<(std::ostream& outs, const Runtime& rhs)
@@ -115,4 +115,10 @@ std::istream& operator >>(std::istream& ins, Runtime& rhs)
 {
     rhs.input(ins);
     return ins;
+}
+
+Runtime operator *(const double& lhs, const Runtime& rhs)
+{
+    Runtime temp = rhs * lhs;
+    return temp;
 }

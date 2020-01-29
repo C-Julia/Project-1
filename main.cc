@@ -11,8 +11,8 @@
 #include<iostream>
 #include<fstream>
 #include "runtime.h"
-
 using namespace std;
+
 // Function menu presents menu to user and collects a selection
 int menu();
 
